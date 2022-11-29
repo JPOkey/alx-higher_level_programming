@@ -15,5 +15,5 @@ elif lastDigit == 0:
     print(f"{msg} and is 0")
 elif lastDigit < 6:
     print(f"{msg} and is less than 6 and not 0")
-lse:
+else:
     print(msg)
