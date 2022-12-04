@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <sys/types.h>
-#include <python3.4/object.h>
 #include <python3.4/listobject.h>
 #include <assert.h>
 
