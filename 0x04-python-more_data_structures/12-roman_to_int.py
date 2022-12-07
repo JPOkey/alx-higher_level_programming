@@ -1,7 +1,23 @@
 #!/usr/bin/python3
-
-
 def roman_to_int(roman_string):
-    units = {'I': 1, 'IV': 4, 'V': 5, 'IX': 9, 'X': 10, 'XL': 40,
-             'L': 50, 'XC': 90, 'C': 100, 'CD': 400, 'D': 500,
-             'CM': 900, 'M': 1000}
+    if type(roman_string) is not str or roman_string is None:
+        return 0
+
+    roman_letters = [
+        ['M', 1000], ['D', 500], ['C', 100], ['L', 50],
+        ['X', 10], ['V', 5], ['I', 1]
+    ]
+    num = 0
+    last = 0
+
+    for letter in roman_string:
+        for elem in roman_letters:
+            if letter == elem[0]:
+                if last == 0 or last >= elem[1]:
+                    num += elem[1]
+                elif last < elem[1]:
+                    num += elem[1] - (last * 2)
+
+                last = elem[1]
+
+    return num
